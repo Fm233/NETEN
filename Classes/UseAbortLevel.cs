@@ -5,9 +5,9 @@ using UnityEngine;
 public class UseAbortLevel : IMB
 {
     public Action<ModelDelNote> modelDelNoteAction { get; set; }
-    
+
     public Action<ModelUseAbortLevelToOutClear> modelUseAbortLevelToOutClearAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,27 +16,12 @@ public class UseAbortLevel : IMB
     {
         // Update here
     }
-    
+
     public void ReceiveModelConAbortLevelToUseAbortLevel(ModelConAbortLevelToUseAbortLevel modelConAbortLevelToUseAbortLevel)
     {
         // Fill receiver function here
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    public Action<ModelOutClear> modelOutClearAction { get; set; }
+
 }

@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 public class OutWin : MonoBehaviour
 {
+    public GameObject winUI;
     public void Start()
     {
         // Start here
@@ -12,15 +13,10 @@ public class OutWin : MonoBehaviour
     {
         // Update here
     }
-    
+
     public void ReceiveModelInWinToOutWin(ModelInWinToOutWin modelInWinToOutWin)
     {
-        // Fill receiver function here
+        winUI.SetActive(true);
     }
-    
-    
-    
-    
-    
-    
+
 }

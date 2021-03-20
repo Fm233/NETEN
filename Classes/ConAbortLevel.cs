@@ -20,15 +20,4 @@ public class ConAbortLevel : IMB
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

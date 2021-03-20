@@ -22,21 +22,4 @@ public class UseInitSong : IMB
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

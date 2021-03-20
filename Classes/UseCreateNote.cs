@@ -24,21 +24,4 @@ public class UseCreateNote : IMB
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

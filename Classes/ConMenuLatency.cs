@@ -5,9 +5,9 @@ using UnityEngine;
 public class ConMenuLatency : IMB
 {
     public Action<ModelOutMenu> modelOutMenuAction { get; set; }
-    
+
     public Action<ModelOutLatency> modelOutLatencyAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,27 +16,11 @@ public class ConMenuLatency : IMB
     {
         // Update here
     }
-    
+
     public void ReceiveModelInMenuLatencyToConMenuLatency(ModelInMenuLatencyToConMenuLatency modelInMenuLatencyToConMenuLatency)
     {
-        // Fill receiver function here
+        modelOutMenuAction(new ModelOutMenu(false));
+        modelOutLatencyAction(new ModelOutLatency(true));
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

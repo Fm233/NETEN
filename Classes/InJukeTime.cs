@@ -4,8 +4,10 @@ using System;
 using UnityEngine;
 public class InJukeTime : MonoBehaviour
 {
-    public Action<ModelInJukeTime> modelInJukeTimeAction { get; set; }
-    
+    AudioSource audioSource;
+
+    Song song;
+
     public void Start()
     {
         // Start here
@@ -15,10 +17,15 @@ public class InJukeTime : MonoBehaviour
         // Update here
     }
     public Action<ModelInJukeTimeToUseJukeTime> modelInJukeTimeToUseJukeTimeAction { get; set; }
-    
-    
-    
-    
-    
-    
+
+    public void ReceiveModelOutSetSong(ModelOutSetSong modelOutSetSong)
+    {
+        song = modelOutSetSong.song;
+    }
+
+    public void ReceiveTimeInf(TimeInf timeInf)
+    {
+        modelInJukeTimeToUseJukeTimeAction(new ModelInJukeTimeToUseJukeTime(timeInf));
+    }
+
 }

@@ -12,15 +12,15 @@ public class OutHP : MonoBehaviour
     {
         // Update here
     }
-    
+
     public void ReceiveModelInHPToOutHP(ModelInHPToOutHP modelInHPToOutHP)
     {
         // Fill receiver function here
     }
-    
-    
-    
-    
-    
-    
+
+    public void ReceiveModelUseHPToOutHP(ModelUseHPToOutHP modelUseHPToOutHP)
+    {
+        // Fill receiver function here
+    }
+
 }

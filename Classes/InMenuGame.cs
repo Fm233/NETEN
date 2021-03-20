@@ -5,9 +5,9 @@ using UnityEngine;
 public class InMenuGame : MonoBehaviour
 {
     public Action<MenuState> menuStateAction { get; set; }
-    
+
     public Action<ModelInMenuGameToConMenuGame> modelInMenuGameToConMenuGameAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,16 +16,11 @@ public class InMenuGame : MonoBehaviour
     {
         // Update here
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    public void Trigger(string sn, string ln)
+    {
+        menuStateAction(MenuState.GAME);
+        modelInMenuGameToConMenuGameAction(new ModelInMenuGameToConMenuGame(sn, ln));
+    }
+
 }

@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 public class OutLatency : MonoBehaviour
 {
+    public GameObject menu;
     public void Start()
     {
         // Start here
@@ -12,37 +13,10 @@ public class OutLatency : MonoBehaviour
     {
         // Update here
     }
-    
+
     public void ReceiveModelOutLatency(ModelOutLatency modelOutLatency)
     {
-        // Fill receiver function here
+        menu.SetActive(modelOutLatency.show);
     }
-    
-    public void ReceiveModelUseLatencyToOutLatency(ModelUseLatencyToOutLatency modelUseLatencyToOutLatency)
-    {
-        // Fill receiver function here
-    }
-    
-    public void ReceiveModelUseLatencyResetToOutLatency(ModelUseLatencyResetToOutLatency modelUseLatencyResetToOutLatency)
-    {
-        // Fill receiver function here
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }

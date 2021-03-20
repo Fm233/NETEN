@@ -5,7 +5,7 @@ using UnityEngine;
 public class OutJukeTime : MonoBehaviour
 {
     public Action<ModelOutJukeTime> modelOutJukeTimeAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -14,19 +14,10 @@ public class OutJukeTime : MonoBehaviour
     {
         // Update here
     }
-    
+
     public void ReceiveModelUseJukeTimeToOutJukeTime(ModelUseJukeTimeToOutJukeTime modelUseJukeTimeToOutJukeTime)
     {
-        // Fill receiver function here
+        modelOutJukeTimeAction(new ModelOutJukeTime(modelUseJukeTimeToOutJukeTime.timeInf.time));
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

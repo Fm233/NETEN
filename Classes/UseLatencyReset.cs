@@ -5,9 +5,9 @@ using UnityEngine;
 public class UseLatencyReset : IMB
 {
     public Action<ModelSetLatency> modelSetLatencyAction { get; set; }
-    
+
     public Action<ModelUseLatencyResetToOutLatency> modelUseLatencyResetToOutLatencyAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,27 +16,12 @@ public class UseLatencyReset : IMB
     {
         // Update here
     }
-    
+
     public void ReceiveModelInLatencyResetToUseLatencyReset(ModelInLatencyResetToUseLatencyReset modelInLatencyResetToUseLatencyReset)
     {
-        // Fill receiver function here
+        modelSetLatencyAction(new ModelSetLatency(new Latency(0, 0)));
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    public Action<ModelUseLatencyResetToOutLatencyDisplay> modelUseLatencyResetToOutLatencyDisplayAction { get; set; }
+
 }

@@ -20,18 +20,6 @@ public class ConLoadLevel : IMB
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
     public Action<ModelConLoadLevelToConSetSong> modelConLoadLevelToConSetSongAction { get; set; }
-    
-    
-    
-    
     
 }

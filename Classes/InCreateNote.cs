@@ -65,13 +65,4 @@ public class InCreateNote : MonoBehaviour
         jukeTime = modelOutJukeTime.time;
     }
 
-
-    
-    
-    
-    
-    
-    
-    
-    
 }

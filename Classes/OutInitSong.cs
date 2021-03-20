@@ -18,9 +18,4 @@ public class OutInitSong : MonoBehaviour
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
 }

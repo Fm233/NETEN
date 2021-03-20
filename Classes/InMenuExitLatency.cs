@@ -5,9 +5,9 @@ using UnityEngine;
 public class InMenuExitLatency : MonoBehaviour
 {
     public Action<MenuState> menuStateAction { get; set; }
-    
+
     public Action<ModelInMenuExitLatencyToConMenuExitLatency> modelInMenuExitLatencyToConMenuExitLatencyAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,16 +16,11 @@ public class InMenuExitLatency : MonoBehaviour
     {
         // Update here
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    public void Trigger()
+    {
+        menuStateAction(MenuState.MENU);
+        modelInMenuExitLatencyToConMenuExitLatencyAction(new ModelInMenuExitLatencyToConMenuExitLatency());
+    }
+
 }

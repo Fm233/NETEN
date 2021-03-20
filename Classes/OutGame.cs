@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 public class OutGame : MonoBehaviour
 {
+    public GameObject menu;
     public void Start()
     {
         // Start here
@@ -12,15 +13,10 @@ public class OutGame : MonoBehaviour
     {
         // Update here
     }
-    
+
     public void ReceiveModelOutGame(ModelOutGame modelOutGame)
     {
-        // Fill receiver function here
+        menu.SetActive(modelOutGame.show);
     }
-    
-    
-    
-    
-    
-    
+
 }

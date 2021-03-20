@@ -33,27 +33,13 @@ public class OutJukebox : MonoBehaviour
         // Fill receiver function here
     }
     
+    public Action<ModelOutJukeboxToInWin> modelOutJukeboxToInWinAction { get; set; }
     
+    public void ReceiveModelOutSetSong(ModelOutSetSong modelOutSetSong)
+    {
+        // Fill receiver function here
+    }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public Action<TimeInf> timeInfAction { get; set; }
     
 }

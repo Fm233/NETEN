@@ -4,8 +4,7 @@ using System;
 using UnityEngine;
 public class InsNote : MonoBehaviour, IModelOutFailToInsNoteReceiver
 {
-    public Action<ModelInsNoteToInHP> modelInsNoteToInHPAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -14,21 +13,10 @@ public class InsNote : MonoBehaviour, IModelOutFailToInsNoteReceiver
     {
         // Update here
     }
-    
+
     public void ReceiveModelOutFailToInsNote(ModelOutFailToInsNote modelOutFailToInsNote)
     {
         // Fill receiver function here
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

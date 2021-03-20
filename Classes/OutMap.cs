@@ -20,15 +20,4 @@ public class OutMap : MonoBehaviour
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

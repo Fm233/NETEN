@@ -5,9 +5,9 @@ using UnityEngine;
 public class InMenuLatency : MonoBehaviour
 {
     public Action<MenuState> menuStateAction { get; set; }
-    
+
     public Action<ModelInMenuLatencyToConMenuLatency> modelInMenuLatencyToConMenuLatencyAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,16 +16,11 @@ public class InMenuLatency : MonoBehaviour
     {
         // Update here
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    public void Trigger()
+    {
+        menuStateAction(MenuState.LATENCY);
+        modelInMenuLatencyToConMenuLatencyAction(new ModelInMenuLatencyToConMenuLatency());
+    }
+
 }

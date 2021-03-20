@@ -18,9 +18,9 @@ public class OutNet : MonoBehaviour
         // Fill receiver function here
     }
     
-    
-    
-    
-    
+    public void ReceiveModelInNet(ModelInNet modelInNet)
+    {
+        // Fill receiver function here
+    }
     
 }

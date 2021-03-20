@@ -24,21 +24,4 @@ public class UseDeleteNote : IMB
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

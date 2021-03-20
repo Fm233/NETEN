@@ -20,15 +20,4 @@ public class OutDeleteNote : MonoBehaviour
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

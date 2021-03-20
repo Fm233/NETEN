@@ -25,6 +25,4 @@ public class ConSetSong : IMB
         // Fill receiver function here
     }
     
-    
-    
 }

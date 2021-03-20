@@ -24,27 +24,6 @@ public class UseLoadLevel : IMB
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public Action<ModelUseLoadLevelToUseNoteKiller> modelUseLoadLevelToUseNoteKillerAction { get; set; }
     
 }

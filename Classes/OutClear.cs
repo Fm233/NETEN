@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 public class OutClear : MonoBehaviour
 {
+    public Transform clearPad;
     public void Start()
     {
         // Start here
@@ -12,26 +13,13 @@ public class OutClear : MonoBehaviour
     {
         // Update here
     }
-    
-    public void ReceiveModelUseAbortLevelToOutClear(ModelUseAbortLevelToOutClear modelUseAbortLevelToOutClear)
+
+    public void ReceiveModelOutClear(ModelOutClear modelOutClear)
     {
-        // Fill receiver function here
+        for (int i = 0; i < clearPad.childCount; i++)
+        {
+            clearPad.GetChild(i).gameObject.SetActive(false); // TODO Destroy?
+        }
     }
-    
-    public void ReceiveModelConMenuExitGameToOutClear(ModelConMenuExitGameToOutClear modelConMenuExitGameToOutClear)
-    {
-        // Fill receiver function here
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

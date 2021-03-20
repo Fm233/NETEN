@@ -5,9 +5,9 @@ using UnityEngine;
 public class ConMenuExitLatency : IMB
 {
     public Action<ModelOutMenu> modelOutMenuAction { get; set; }
-    
+
     public Action<ModelOutLatency> modelOutLatencyAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,27 +16,11 @@ public class ConMenuExitLatency : IMB
     {
         // Update here
     }
-    
+
     public void ReceiveModelInMenuExitLatencyToConMenuExitLatency(ModelInMenuExitLatencyToConMenuExitLatency modelInMenuExitLatencyToConMenuExitLatency)
     {
-        // Fill receiver function here
+        modelOutMenuAction(new ModelOutMenu(true));
+        modelOutLatencyAction(new ModelOutLatency(false));
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

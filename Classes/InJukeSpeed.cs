@@ -15,9 +15,4 @@ public class InJukeSpeed : MonoBehaviour
         // Update here
     }
     
-    
-    
-    
-    
-    
 }

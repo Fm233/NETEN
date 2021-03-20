@@ -5,9 +5,9 @@ using UnityEngine;
 public class InMenuExitEdit : MonoBehaviour
 {
     public Action<MenuState> menuStateAction { get; set; }
-    
+
     public Action<ModelInMenuExitEditToConMenuExitEdit> modelInMenuExitEditToConMenuExitEditAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,16 +16,11 @@ public class InMenuExitEdit : MonoBehaviour
     {
         // Update here
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    public void Trigger()
+    {
+        menuStateAction(MenuState.MENU);
+        modelInMenuExitEditToConMenuExitEditAction(new ModelInMenuExitEditToConMenuExitEdit());
+    }
     
 }

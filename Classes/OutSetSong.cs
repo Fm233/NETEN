@@ -20,15 +20,6 @@ public class OutSetSong : MonoBehaviour
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public Action<ModelOutSetSong> modelOutSetSongAction { get; set; }
     
 }

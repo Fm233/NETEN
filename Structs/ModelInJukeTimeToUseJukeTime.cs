@@ -4,12 +4,10 @@ using System;
 using UnityEngine;
 public class ModelInJukeTimeToUseJukeTime
 {
-    public Song song;
-    public float time;
+    public TimeInf timeInf;
 
-    public ModelInJukeTimeToUseJukeTime(Song song, float time)
+    public ModelInJukeTimeToUseJukeTime(TimeInf timeInf)
     {
-        this.song = song;
-        this.time = time;
+        this.timeInf = timeInf;
     }
 }

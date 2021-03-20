@@ -6,14 +6,14 @@ public class FacNote : MonoBehaviour
 {
     List<InsNote> elements = new List<InsNote>();
     public GameObject prefab;
-    public InHP inHP;
+    public OutFail outFail;
     
     public void ReceiveModelCrtInsNote(ModelCrtInsNote modelCrtInsNote)
     {
         GameObject instance = Instantiate(prefab);
         InsNote comp = instance.GetComponent<InsNote>();
         elements.Add(comp);
-        comp.modelInsNoteToInHPAction += inHP.ReceiveModelInsNoteToInHP;
+        outFail.modelOutFailToInsNoteAction += comp.ReceiveModelOutFailToInsNote;
         modelCrtInsNote.ret(comp);
     }
     

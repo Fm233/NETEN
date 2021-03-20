@@ -5,11 +5,11 @@ using UnityEngine;
 public class ConMenuGame : IMB
 {
     public Action<ModelOutMenu> modelOutMenuAction { get; set; }
-    
+
     public Action<ModelOutGame> modelOutGameAction { get; set; }
-    
+
     public Action<ModelConMenuGameToConLoadLevel> modelConMenuGameToConLoadLevelAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -18,38 +18,15 @@ public class ConMenuGame : IMB
     {
         // Update here
     }
-    
+
     public void ReceiveModelInMenuGameToConMenuGame(ModelInMenuGameToConMenuGame modelInMenuGameToConMenuGame)
     {
-        // Fill receiver function here
+        modelOutGameAction(new ModelOutGame(true));
+        modelOutMenuAction(new ModelOutMenu(false));
+        modelConMenuGameToConLoadLevelAction(new ModelConMenuGameToConLoadLevel(modelInMenuGameToConMenuGame.songName, modelInMenuGameToConMenuGame.levelName));
+
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     public Action<ModelConMenuGameToInHP> modelConMenuGameToInHPAction { get; set; }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

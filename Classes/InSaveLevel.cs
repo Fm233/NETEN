@@ -15,9 +15,4 @@ public class InSaveLevel : MonoBehaviour
         // Update here
     }
     
-    
-    
-    
-    
-    
 }

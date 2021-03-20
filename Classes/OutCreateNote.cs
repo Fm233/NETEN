@@ -20,15 +20,4 @@ public class OutCreateNote : MonoBehaviour
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

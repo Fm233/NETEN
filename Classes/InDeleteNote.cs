@@ -26,11 +26,4 @@ public class InDeleteNote : MonoBehaviour
         jukeTime = modelOutJukeTime.time;
     }
     
-    
-    
-    
-    
-    
-    
-    
 }

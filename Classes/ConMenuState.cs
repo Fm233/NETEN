@@ -5,30 +5,19 @@ using UnityEngine;
 public class ConMenuState : IMB
 {
     public Action<MenuState> menuStateAction { get; set; }
-    
+
     public void Start()
     {
-        // Start here
+        menuStateAction(MenuState.MENU);
     }
     public void Update()
     {
         // Update here
     }
-    
+
     public void ReceiveMenuState(MenuState menuState)
     {
-        // Fill receiver function here
+        menuStateAction(menuState);
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 }

@@ -20,15 +20,6 @@ public class InNet : MonoBehaviour
         // Fill receiver function here
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    public Action<ModelInNet> modelInNetAction { get; set; }
     
 }

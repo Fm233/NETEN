@@ -5,7 +5,7 @@ using UnityEngine;
 public class InLatencyReset : MonoBehaviour
 {
     public Action<ModelInLatencyResetToUseLatencyReset> modelInLatencyResetToUseLatencyResetAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -14,10 +14,10 @@ public class InLatencyReset : MonoBehaviour
     {
         // Update here
     }
-    
-    
-    
-    
-    
+
+    public void Trigger()
+    {
+        modelInLatencyResetToUseLatencyResetAction(new ModelInLatencyResetToUseLatencyReset());
+    }
     
 }

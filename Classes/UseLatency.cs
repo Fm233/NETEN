@@ -5,11 +5,11 @@ using UnityEngine;
 public class UseLatency : IMB
 {
     public Action<ModelSetLatency> modelSetLatencyAction { get; set; }
-    
+
     public Action<ModelGetLatency> modelGetLatencyAction { get; set; }
-    
+
     public Action<ModelUseLatencyToOutLatency> modelUseLatencyToOutLatencyAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -18,33 +18,15 @@ public class UseLatency : IMB
     {
         // Update here
     }
-    
+
     public void ReceiveModelInLatencyToUseLatency(ModelInLatencyToUseLatency modelInLatencyToUseLatency)
     {
-        // Fill receiver function here
+        modelGetLatencyAction(new ModelGetLatency((Latency latency) =>
+        {
+            modelSetLatencyAction(new ModelSetLatency(Util.AddLatency(latency, modelInLatencyToUseLatency.latency)));
+        }));
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    public Action<ModelUseLatencyToOutLatencyDisplay> modelUseLatencyToOutLatencyDisplayAction { get; set; }
+
 }

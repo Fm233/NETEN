@@ -15,9 +15,4 @@ public class InJukeMove : MonoBehaviour
         // Update here
     }
     
-    
-    
-    
-    
-    
 }

@@ -79,21 +79,15 @@ public class InitMan : Editor
         GameObject inLatencyReset = new GameObject();
         inLatencyReset.name = "InLatencyReset";
         main.inLatencyReset = inLatencyReset.AddComponent<InLatencyReset>();
-        GameObject outLatency = new GameObject();
-        outLatency.name = "OutLatency";
-        main.outLatency = outLatency.AddComponent<OutLatency>();
-        GameObject inHP = new GameObject();
-        inHP.name = "InHP";
-        main.inHP = inHP.AddComponent<InHP>();
+        GameObject outLatencyDisplay = new GameObject();
+        outLatencyDisplay.name = "OutLatencyDisplay";
+        main.outLatencyDisplay = outLatencyDisplay.AddComponent<OutLatencyDisplay>();
         GameObject outHP = new GameObject();
         outHP.name = "OutHP";
         main.outHP = outHP.AddComponent<OutHP>();
         GameObject outFail = new GameObject();
         outFail.name = "OutFail";
         main.outFail = outFail.AddComponent<OutFail>();
-        GameObject outWin = new GameObject();
-        outWin.name = "OutWin";
-        main.outWin = outWin.AddComponent<OutWin>();
         GameObject inMenuEdit = new GameObject();
         inMenuEdit.name = "InMenuEdit";
         main.inMenuEdit = inMenuEdit.AddComponent<InMenuEdit>();
@@ -121,15 +115,21 @@ public class InitMan : Editor
         GameObject inMenuExitGame = new GameObject();
         inMenuExitGame.name = "InMenuExitGame";
         main.inMenuExitGame = inMenuExitGame.AddComponent<InMenuExitGame>();
-        GameObject inWin = new GameObject();
-        inWin.name = "InWin";
-        main.inWin = inWin.AddComponent<InWin>();
+        GameObject outLatency = new GameObject();
+        outLatency.name = "OutLatency";
+        main.outLatency = outLatency.AddComponent<OutLatency>();
         GameObject inJukeTime = new GameObject();
         inJukeTime.name = "InJukeTime";
         main.inJukeTime = inJukeTime.AddComponent<InJukeTime>();
+        GameObject inWin = new GameObject();
+        inWin.name = "InWin";
+        main.inWin = inWin.AddComponent<InWin>();
+        GameObject outWin = new GameObject();
+        outWin.name = "OutWin";
+        main.outWin = outWin.AddComponent<OutWin>();
         
         // Link factories
-        main.facNote.inHP = main.inHP;
+        main.facNote.outFail = main.outFail;
     }
 }
 #endif
