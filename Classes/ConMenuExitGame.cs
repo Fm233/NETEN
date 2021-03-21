@@ -26,8 +26,6 @@ public class ConMenuExitGame : IMB
         modelOutMenuAction(new ModelOutMenu(true));
     }
 
-    public Action<ModelOutC> modelOutCAction { get; set; }
-    
     public Action<ModelOutClear> modelOutClearAction { get; set; }
-    
+
 }

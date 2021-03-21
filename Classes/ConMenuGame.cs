@@ -24,7 +24,6 @@ public class ConMenuGame : IMB
         modelOutGameAction(new ModelOutGame(true));
         modelOutMenuAction(new ModelOutMenu(false));
         modelConMenuGameToConLoadLevelAction(new ModelConMenuGameToConLoadLevel(modelInMenuGameToConMenuGame.songName, modelInMenuGameToConMenuGame.levelName));
-
     }
 
     public Action<ModelConMenuGameToInHP> modelConMenuGameToInHPAction { get; set; }

@@ -127,9 +127,20 @@ public class InitMan : Editor
         GameObject outWin = new GameObject();
         outWin.name = "OutWin";
         main.outWin = outWin.AddComponent<OutWin>();
+        GameObject facLevelCard = new GameObject();
+        facLevelCard.name = "FacLevelCard";
+        main.facLevelCard = facLevelCard.AddComponent<FacLevelCard>();
+        GameObject facSongCard = new GameObject();
+        facSongCard.name = "FacSongCard";
+        main.facSongCard = facSongCard.AddComponent<FacSongCard>();
+        GameObject outCardCtrl = new GameObject();
+        outCardCtrl.name = "OutCardCtrl";
+        main.outCardCtrl = outCardCtrl.AddComponent<OutCardCtrl>();
         
         // Link factories
         main.facNote.outFail = main.outFail;
+        main.facLevelCard.inMenuGame = main.inMenuGame;
+        main.facSongCard.inMenuEdit = main.inMenuEdit;
     }
 }
 #endif

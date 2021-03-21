@@ -5,9 +5,9 @@ using UnityEngine;
 public class UseSetSong : IMB
 {
     public Action<ModelGetSong> modelGetSongAction { get; set; }
-    
+
     public Action<ModelUseSetSongToOutSetSong> modelUseSetSongToOutSetSongAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,10 +16,18 @@ public class UseSetSong : IMB
     {
         // Update here
     }
-    
+
     public void ReceiveModelConSetSongToUseSetSong(ModelConSetSongToUseSetSong modelConSetSongToUseSetSong)
     {
-        // Fill receiver function here
+        modelGetSongAction(new ModelGetSong((Song song) =>
+        {
+            return song.name == modelConSetSongToUseSetSong.songName;
+        }, (List<Song> list) =>
+        {
+            if (list != null && list.Count > 0)
+            {
+                modelUseSetSongToOutSetSongAction(new ModelUseSetSongToOutSetSong(list[0]));
+            }
+        }));
     }
-    
 }

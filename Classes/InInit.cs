@@ -26,4 +26,6 @@ public class InInit : MonoBehaviour
         songs.Add(new Song(name, author, Resources.Load<AudioClip>("Audios/" + name), bpm, offset, start, end));
     }
 
+    public Action<ModelInInitToUseInitLevel> modelInInitToUseInitLevelAction { get; set; }
+    
 }

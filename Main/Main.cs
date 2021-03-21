@@ -7,6 +7,7 @@ public class Main : MonoBehaviour
     public UseSaveLevel useSaveLevel;
     public DBLevel dBLevel;
     public UseLoadLevel useLoadLevel;
+    public UseInitLevel useInitLevel;
     public UseCreateNote useCreateNote;
     public DBNote dBNote;
     public UseDeleteNote useDeleteNote;
@@ -46,8 +47,17 @@ public class Main : MonoBehaviour
     public InNet inNet;
     public OutNet outNet;
     public UseNoteKiller useNoteKiller;
-    public InJukeMove inJukeMove;
+    public OutClear outClear;
+    public OutSetSong outSetSong;
     public OutJukebox outJukebox;
+    public InWin inWin;
+    public OutCardCtrl outCardCtrl;
+    public InJukeTime inJukeTime;
+    public InLatency inLatency;
+    public FacLevelCard facLevelCard;
+    public OutInitSong outInitSong;
+    public FacSongCard facSongCard;
+    public InJukeMove inJukeMove;
     public InJukebox inJukebox;
     public InJukeSpeed inJukeSpeed;
     public ConAbortLevel conAbortLevel;
@@ -55,17 +65,11 @@ public class Main : MonoBehaviour
     public ConLoadLevel conLoadLevel;
     public InInit inInit;
     public ConSetSong conSetSong;
-    public OutSetSong outSetSong;
-    public OutInitSong outInitSong;
-    public InLatency inLatency;
     public InLatencyReset inLatencyReset;
     public OutLatencyDisplay outLatencyDisplay;
-    public InJukeTime inJukeTime;
     public UseHP useHP;
     public OutHP outHP;
     public OutFail outFail;
-    public OutClear outClear;
-    public InWin inWin;
     public OutWin outWin;
     public Updater updater;
     void Start()
@@ -74,6 +78,7 @@ public class Main : MonoBehaviour
         useSaveLevel = new UseSaveLevel();
         dBLevel = new DBLevel();
         useLoadLevel = new UseLoadLevel();
+        useInitLevel = new UseInitLevel();
         useCreateNote = new UseCreateNote();
         dBNote = new DBNote();
         useDeleteNote = new UseDeleteNote();
@@ -101,6 +106,7 @@ public class Main : MonoBehaviour
         // Update
         updater.AddIMB(useSaveLevel);
         updater.AddIMB(useLoadLevel);
+        updater.AddIMB(useInitLevel);
         updater.AddIMB(useCreateNote);
         updater.AddIMB(useDeleteNote);
         updater.AddIMB(useAbortLevel);
@@ -125,6 +131,7 @@ public class Main : MonoBehaviour
         // Connect
         useSaveLevel.modelCrtLevelAction += dBLevel.ReceiveModelCrtLevel;
         useLoadLevel.modelGetLevelAction += dBLevel.ReceiveModelGetLevel;
+        useInitLevel.modelGetLevelAction += dBLevel.ReceiveModelGetLevel;
         useCreateNote.modelCrtNoteAction += dBNote.ReceiveModelCrtNote;
         useDeleteNote.modelDelNoteAction += dBNote.ReceiveModelDelNote;
         useAbortLevel.modelDelNoteAction += dBNote.ReceiveModelDelNote;
@@ -163,6 +170,20 @@ public class Main : MonoBehaviour
         conMenuEdit.modelOutEditAction += outEdit.ReceiveModelOutEdit;
         inNet.modelInNetAction += outNet.ReceiveModelInNet;
         inNet.modelInNetAction += useNoteKiller.ReceiveModelInNet;
+        useAbortLevel.modelOutClearAction += outClear.ReceiveModelOutClear;
+        conMenuExitGame.modelOutClearAction += outClear.ReceiveModelOutClear;
+        outSetSong.modelOutSetSongAction += outJukebox.ReceiveModelOutSetSong;
+        conMenuState.menuStateAction += outCam.ReceiveMenuState;
+        conMenuState.menuStateAction += inNet.ReceiveMenuState;
+        conMenuState.menuStateAction += inWin.ReceiveMenuState;
+        conMenuState.menuStateAction += outCardCtrl.ReceiveMenuState;
+        outJukebox.timeInfAction += inJukeTime.ReceiveTimeInf;
+        outJukebox.timeInfAction += inWin.ReceiveTimeInf;
+        outJukebox.timeInfAction += inLatency.ReceiveTimeInf;
+        useInitLevel.modelCrtInsLevelCardAction += facLevelCard.ReceiveModelCrtInsLevelCard;
+        outInitSong.modelCrtInsSongCardAction += facSongCard.ReceiveModelCrtInsSongCard;
+        outCardCtrl.modelGetInsSongCardAction += facSongCard.ReceiveModelGetInsSongCard;
+        outCardCtrl.modelGetInsLevelCardAction += facLevelCard.ReceiveModelGetInsLevelCard;
         inJukeMove.modelInJukeMoveToOutJukeboxAction += outJukebox.ReceiveModelInJukeMoveToOutJukebox;
         inJukebox.jukeOpAction += outJukebox.ReceiveJukeOp;
         inJukeSpeed.modelInJukeSpeedToOutJukeboxAction += outJukebox.ReceiveModelInJukeSpeedToOutJukebox;
@@ -180,9 +201,7 @@ public class Main : MonoBehaviour
         inLatency.modelInLatencyToUseLatencyAction += useLatency.ReceiveModelInLatencyToUseLatency;
         inLatencyReset.modelInLatencyResetToUseLatencyResetAction += useLatencyReset.ReceiveModelInLatencyResetToUseLatencyReset;
         useLatency.modelUseLatencyToOutLatencyDisplayAction += outLatencyDisplay.ReceiveModelUseLatencyToOutLatencyDisplay;
-        useLatencyReset.modelUseLatencyResetToOutLatencyDisplayAction += outLatencyDisplay.ReceiveModelUseLatencyResetToOutLatencyDisplay;
         inMenuEdit.modelInMenuEditToConMenuEditAction += conMenuEdit.ReceiveModelInMenuEditToConMenuEdit;
-        conMenuEdit.modelConMenuEditToConSetSongAction += conSetSong.ReceiveModelConMenuEditToConSetSong;
         inMenuExitEdit.modelInMenuExitEditToConMenuExitEditAction += conMenuExitEdit.ReceiveModelInMenuExitEditToConMenuExitEdit;
         inMenuGame.modelInMenuGameToConMenuGameAction += conMenuGame.ReceiveModelInMenuGameToConMenuGame;
         conMenuGame.modelConMenuGameToConLoadLevelAction += conLoadLevel.ReceiveModelConMenuGameToConLoadLevel;
@@ -192,20 +211,14 @@ public class Main : MonoBehaviour
         inMenuExitLatency.modelInMenuExitLatencyToConMenuExitLatencyAction += conMenuExitLatency.ReceiveModelInMenuExitLatencyToConMenuExitLatency;
         inJukeTime.modelInJukeTimeToUseJukeTimeAction += useJukeTime.ReceiveModelInJukeTimeToUseJukeTime;
         useJukeTime.modelUseJukeTimeToOutJukeTimeAction += outJukeTime.ReceiveModelUseJukeTimeToOutJukeTime;
-        conLoadLevel.modelConLoadLevelToConSetSongAction += conSetSong.ReceiveModelConLoadLevelToConSetSong;
         useLoadLevel.modelUseLoadLevelToUseNoteKillerAction += useNoteKiller.ReceiveModelUseLoadLevelToUseNoteKiller;
         useNoteKiller.modelUseNoteKillerToUseHPAction += useHP.ReceiveModelUseNoteKillerToUseHP;
         useHP.modelUseHPToOutHPAction += outHP.ReceiveModelUseHPToOutHP;
         useHP.modelUseHPToOutFailAction += outFail.ReceiveModelUseHPToOutFail;
-        useAbortLevel.modelOutClearAction += outClear.ReceiveModelOutClear;
-        conMenuExitGame.modelOutClearAction += outClear.ReceiveModelOutClear;
         inWin.modelInWinToOutWinAction += outWin.ReceiveModelInWinToOutWin;
-        outSetSong.modelOutSetSongAction += outJukebox.ReceiveModelOutSetSong;
-        conMenuState.menuStateAction += outCam.ReceiveMenuState;
-        conMenuState.menuStateAction += inNet.ReceiveMenuState;
-        conMenuState.menuStateAction += inWin.ReceiveMenuState;
-        outJukebox.timeInfAction += inJukeTime.ReceiveTimeInf;
-        outJukebox.timeInfAction += inWin.ReceiveTimeInf;
-        outJukebox.timeInfAction += inLatency.ReceiveTimeInf;
+        useLatencyReset.modelUseLatencyResetToOutLatencyDisplayAction += outLatencyDisplay.ReceiveModelUseLatencyResetToOutLatencyDisplay;
+        inInit.modelInInitToUseInitLevelAction += useInitLevel.ReceiveModelInInitToUseInitLevel;
+        conMenuEdit.modelConSetSongAction += conSetSong.ReceiveModelConSetSong;
+        conLoadLevel.modelConSetSongAction += conSetSong.ReceiveModelConSetSong;
     }
 }

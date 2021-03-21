@@ -15,14 +15,8 @@ public class ConSetSong : IMB
         // Update here
     }
 
-    public void ReceiveModelConMenuEditToConSetSong(ModelConMenuEditToConSetSong modelConMenuEditToConSetSong)
+    public void ReceiveModelConSetSong(ModelConSetSong modelConSetSong)
     {
-        // Fill receiver function here
+        modelConSetSongToUseSetSongAction(new ModelConSetSongToUseSetSong(modelConSetSong.songName));
     }
-
-    public void ReceiveModelConLoadLevelToConSetSong(ModelConLoadLevelToConSetSong modelConLoadLevelToConSetSong)
-    {
-        // Fill receiver function here
-    }
-    
 }

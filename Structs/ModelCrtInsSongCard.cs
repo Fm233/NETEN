@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-public class ModelCrtInsNote
+public class ModelCrtInsSongCard
 {
-    public Action<InsNote> ret;
+    public Action<InsSongCard> ret;
 
-    public ModelCrtInsNote(Action<InsNote> ret)
+    public ModelCrtInsSongCard(Action<InsSongCard> ret)
     {
         this.ret = ret;
     }

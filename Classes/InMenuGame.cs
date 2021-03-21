@@ -23,4 +23,9 @@ public class InMenuGame : MonoBehaviour
         modelInMenuGameToConMenuGameAction(new ModelInMenuGameToConMenuGame(sn, ln));
     }
 
+    public void ReceiveModelInsLevelCardToInMenuGame(ModelInsLevelCardToInMenuGame modelInsLevelCardToInMenuGame)
+    {
+        Trigger(modelInsLevelCardToInMenuGame.songName, modelInsLevelCardToInMenuGame.levelName);
+    }
+    
 }

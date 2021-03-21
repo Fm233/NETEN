@@ -5,9 +5,9 @@ using UnityEngine;
 public class UseInitSong : IMB
 {
     public Action<ModelCrtSong> modelCrtSongAction { get; set; }
-    
+
     public Action<ModelUseInitSongToOutInitSong> modelUseInitSongToOutInitSongAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -16,10 +16,14 @@ public class UseInitSong : IMB
     {
         // Update here
     }
-    
+
     public void ReceiveModelInInitToUseInitSong(ModelInInitToUseInitSong modelInInitToUseInitSong)
     {
-        // Fill receiver function here
+        foreach (Song song in modelInInitToUseInitSong.songs)
+        {
+            modelCrtSongAction(new ModelCrtSong(song));
+        }
+        modelUseInitSongToOutInitSongAction(new ModelUseInitSongToOutInitSong(modelInInitToUseInitSong.songs));
     }
     
 }

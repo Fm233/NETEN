@@ -4,8 +4,7 @@ using System;
 using UnityEngine;
 public class OutSetSong : MonoBehaviour
 {
-    public Action<ModelOutSetSongToOutJukebox> modelOutSetSongToOutJukeboxAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -14,12 +13,12 @@ public class OutSetSong : MonoBehaviour
     {
         // Update here
     }
-    
+
     public void ReceiveModelUseSetSongToOutSetSong(ModelUseSetSongToOutSetSong modelUseSetSongToOutSetSong)
     {
-        // Fill receiver function here
+        modelOutSetSongAction(new ModelOutSetSong(modelUseSetSongToOutSetSong.song));
     }
-    
+
     public Action<ModelOutSetSong> modelOutSetSongAction { get; set; }
-    
+
 }

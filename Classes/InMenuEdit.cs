@@ -18,10 +18,15 @@ public class InMenuEdit : MonoBehaviour
         // Update here
     }
 
-    public void Trigger(string songName)
+    void Trigger(string songName)
     {
         menuStateAction(MenuState.EDIT);
         modelInMenuEditToConMenuEditAction(new ModelInMenuEditToConMenuEdit(songName));
     }
 
+    public void ReceiveModelInsSongCardToInMenuEdit(ModelInsSongCardToInMenuEdit modelInsSongCardToInMenuEdit)
+    {
+        Trigger(modelInsSongCardToInMenuEdit.songName);
+    }
+    
 }

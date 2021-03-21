@@ -14,5 +14,20 @@ public class InJukebox : MonoBehaviour
     {
         // Update here
     }
-    
+
+    public void Play()
+    {
+        jukeOpAction(JukeOp.PLAY);
+    }
+
+    public void Pause()
+    {
+        jukeOpAction(JukeOp.PAUSE);
+    }
+
+    public void Stop()
+    {
+        jukeOpAction(JukeOp.STOP);
+    }
+
 }

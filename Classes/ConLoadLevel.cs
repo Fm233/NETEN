@@ -5,7 +5,7 @@ using UnityEngine;
 public class ConLoadLevel : IMB
 {
     public Action<ModelConLoadLevelToUseLoadLevel> modelConLoadLevelToUseLoadLevelAction { get; set; }
-    
+
     public void Start()
     {
         // Start here
@@ -14,12 +14,12 @@ public class ConLoadLevel : IMB
     {
         // Update here
     }
-    
+
     public void ReceiveModelConMenuGameToConLoadLevel(ModelConMenuGameToConLoadLevel modelConMenuGameToConLoadLevel)
     {
         // Fill receiver function here
     }
-    
-    public Action<ModelConLoadLevelToConSetSong> modelConLoadLevelToConSetSongAction { get; set; }
-    
+
+    public Action<ModelConSetSong> modelConSetSongAction { get; set; }
+
 }

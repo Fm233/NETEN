@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-public class ModelCrtInsNote
+public class ModelCrtInsLevelCard
 {
-    public Action<InsNote> ret;
+    public Action<InsLevelCard> ret;
 
-    public ModelCrtInsNote(Action<InsNote> ret)
+    public ModelCrtInsLevelCard(Action<InsLevelCard> ret)
     {
         this.ret = ret;
     }

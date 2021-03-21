@@ -8,8 +8,6 @@ public class ConMenuEdit : IMB
 
     public Action<ModelOutEdit> modelOutEditAction { get; set; }
 
-    public Action<ModelConMenuEditToConSetSong> modelConMenuEditToConSetSongAction { get; set; }
-
     public void Start()
     {
         // Start here
@@ -21,9 +19,11 @@ public class ConMenuEdit : IMB
 
     public void ReceiveModelInMenuEditToConMenuEdit(ModelInMenuEditToConMenuEdit modelInMenuEditToConMenuEdit)
     {
-        modelConMenuEditToConSetSongAction(new ModelConMenuEditToConSetSong(modelInMenuEditToConMenuEdit.songName));
+        modelConSetSongAction(new ModelConSetSong(modelInMenuEditToConMenuEdit.songName));
         modelOutEditAction(new ModelOutEdit(true));
         modelOutMenuAction(new ModelOutMenu(false));
     }
+
+    public Action<ModelConSetSong> modelConSetSongAction { get; set; }
 
 }
